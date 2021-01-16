@@ -28,12 +28,21 @@ class App extends Component {
     ],
   };
 
+  // usually use Handler at the end to say that this is a method you're not actively calling
+  // but you're assigning as an event handler (not required but good practice)
+  // when calling it on button DO NOT add () after the function name like you normally would!
+  // this would make it execute immideately as we render the component but that's not supposed to happen
+  // it's just a reference - it becomes a references because you say this.switchNameHandler
+  switchNameHandler = () => {
+    console.log('was clicked!');
+  };
+
   render() {
     return (
       <div className='App'>
         <h1>Hi I'm a React App</h1>
         <p>This is really working!</p>
-        <button>Switch Name</button>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
         <Person name={this.state.persons[0].name} age={this.state.persons[0].age} />
         <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>
           My hobbies: Racing
