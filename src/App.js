@@ -8,8 +8,8 @@ class App extends Component {
   // also useState and state is not the same thing!
   // state can have any property you want - it doesn't have to be an array
 
-  // if state changes then react dom will re render - but only the one where something happens
-  // so if we changed max's age to 29 then only that person would rerender (not the whole component)
+  // if state changes then react dom will re render
+  // so if we changed max's age to 29 then only that person would rerender
 
   state = {
     persons: [
