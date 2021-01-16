@@ -40,6 +40,26 @@ class App extends Component {
     });
   };
 
+  // GET WHATEVER IS IN THE INPUT FIELD AND CHANGE MANU TO THAT
+  nameChangedHandler = event => {
+    this.setState({
+      persons: [
+        {
+          name: 'Max',
+          age: 28,
+        },
+        {
+          name: event.target.value,
+          age: 29,
+        },
+        {
+          name: 'Stephanie',
+          age: 26,
+        },
+      ],
+    });
+  };
+
   // if you want to use a function fx when clicking each paragraph in person you can make a reference from this component by making
   // using a prop called click and then the name of the reference (in this case the switchNameHandler)
   // that prop will of course need to be on the p paragraph in the person component
@@ -65,7 +85,8 @@ class App extends Component {
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind(this, 'Max!')}>
+          click={this.switchNameHandler.bind(this, 'Max!')}
+          changed={this.nameChangedHandler}>
           My hobbies: Racing
         </Person>
         <Person name={this.state.persons[2].name} age={this.state.persons[2].age} />
