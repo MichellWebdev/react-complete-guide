@@ -26,6 +26,7 @@ class App extends Component {
         age: 26,
       },
     ],
+    otherState: 'some other value',
   };
 
   // usually use Handler at the end to say that this is a method you're not actively calling
@@ -34,7 +35,28 @@ class App extends Component {
   // this would make it execute immideately as we render the component but that's not supposed to happen
   // it's just a reference - it becomes a references because you say this.switchNameHandler
   switchNameHandler = () => {
-    console.log('was clicked!');
+    // console.log('was clicked!');
+    // THIS IS WRONG!!
+    // this.state.persons.persons[0].name = 'Maximilian';
+
+    // use setState method - takes an object as an object - will merge whatever we have here to our existing state
+    // this overwrites the persons array that already exists
+    this.setState({
+      persons: [
+        {
+          name: 'Maximilian',
+          age: 28,
+        },
+        {
+          name: 'Manu',
+          age: 29,
+        },
+        {
+          name: 'Stephanie',
+          age: 27,
+        },
+      ],
+    });
   };
 
   render() {
