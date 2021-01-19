@@ -60,10 +60,9 @@ class App extends Component {
   };
 
   render() {
-    // inline style
     const style = {
       backgroundColor: 'white',
-      font: 'inherit', //use surrounding font
+      font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
       cursor: 'pointer',
